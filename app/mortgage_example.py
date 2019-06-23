@@ -47,7 +47,7 @@ def payments(amount, interest_rate_percents, n_years, monthly_payment, extra_pay
         if amount - monthly_payment <= 0:
             break
 
-        if i > 1 and i % 12 == 0 and extra_payment < amount:
+        if amount > extra_payment > 0 == i % 12 and i > 1:
             paid_amount = paid_amount + extra_payment
             amount = amount - extra_payment
             balance_sum = balance_sum + extra_payment
@@ -65,9 +65,9 @@ def execute():
     amount = 4000000 # 2720000
     interest_rate = 2.85
     n_years = 20 #30
-    #monthly_payment = calculate_monthly_payment(amount, interest_rate, n_years)
-    #print("Monthly payment: " + round_str(monthly_payment))
-    monthly_payment = 22000 #22115 # 16899
+    monthly_payment = calculate_monthly_payment(amount, interest_rate, n_years)
+    print("Monthly payment: " + round_str(monthly_payment))
+    #monthly_payment = 22000 #22115 # 16899
     payments(amount, interest_rate, n_years, monthly_payment, 0)
 
 
