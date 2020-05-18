@@ -62,12 +62,12 @@ def calculate_monthly_payment(amount, interest_rate_percents, n_years):
 
 
 def execute():
-    amount = 4000000 # 2720000
-    interest_rate = 2.85
-    n_years = 20 #30
+    amount = 2912000
+    interest_rate = 2.49
+    n_years = 20
     monthly_payment = calculate_monthly_payment(amount, interest_rate, n_years)
     print("Monthly payment: " + round_str(monthly_payment))
-    #monthly_payment = 22000 #22115 # 16899
+
     payments(amount, interest_rate, n_years, monthly_payment, 0)
 
 
