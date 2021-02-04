@@ -5,7 +5,7 @@ def round_str(number):
     return str(round(number))
 
 
-def payments(amount, interest_rate_percents, n_years, monthly_payment, extra_payment = 120000):
+def payments(amount, interest_rate_percents, n_years, monthly_payment, extra_payment=0):
     disable_labels = False
     label_month = "" if disable_labels else "month: "
     label_remaining_amount = "" if disable_labels else "remaining amount: "
@@ -14,7 +14,7 @@ def payments(amount, interest_rate_percents, n_years, monthly_payment, extra_pay
     label_interest = "" if disable_labels else "interest amount: "
     label_balance_sum = "" if disable_labels else "balance sum: "
     label_interest_sum = "" if disable_labels else "interest sum: "
-    separator = "\t" # ", "
+    separator = "\t"  # ", "
 
     n_months = n_years * 12
     interest_rate = interest_rate_percents / 100
@@ -41,7 +41,7 @@ def payments(amount, interest_rate_percents, n_years, monthly_payment, extra_pay
             separator + label_interest + round_str(interest) +
             separator + label_balance_sum + round_str(balance_sum) +
             separator + label_interest_sum + round_str(interest_sum)
-              )
+        )
         i = i + 1
 
         if amount - monthly_payment <= 0:
@@ -62,8 +62,8 @@ def calculate_monthly_payment(amount, interest_rate_percents, n_years):
 
 
 def execute():
-    amount = 2912000
-    interest_rate = 2.49
+    amount = 2712000
+    interest_rate = 1.89
     n_years = 20
     monthly_payment = calculate_monthly_payment(amount, interest_rate, n_years)
     print("Monthly payment: " + round_str(monthly_payment))
@@ -75,5 +75,5 @@ def main():
     execute()
 
 
-if __name__== "__main__":
+if __name__ == "__main__":
     main()
